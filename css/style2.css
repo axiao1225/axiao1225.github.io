@@ -1,0 +1,168 @@
+html,
+body {
+  margin: 0;
+  font-family: "PingFang TC", "Microsoft Yahei", sans-serif;
+}
+
+* {
+   box-sizing: border-box;
+}
+.research {
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 30px;
+    width: 366px;
+    height: 80px;
+/*    background: rgb(200, 0, 0);*/
+}
+.research h2{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 100;
+  margin-bottom: 2%;
+}
+.research p{
+    position: relative;
+  　text-align: center;
+    padding-top: 2px;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+}
+.touchit{
+  width: 270px;
+  margin: auto;
+}
+
+.touchit p{
+    position: relative;
+  　text-align: center;
+    padding-top: 2px;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+}
+.row {
+  display: flex;
+}
+
+.pro-card-wrapper {
+  /* 开启3D空间 */
+  perspective: 300px;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.pro-card {
+  /* 基础布局 */
+  width: 100px;
+  height: 100px;
+  margin: 80px 100px 100px 100px;
+  position: relative;
+  text-align: center;
+/*  background: rgba(186,86,211, 0.1);*/
+
+  /* 翻转特效时间 */
+  transition: transform 0.8s;
+  /* 保留3D空间 */
+  transform-style: preserve-3d;
+}
+
+/*.s2-title{
+  font-size: 20px;
+}
+.s2-txt{
+  margin: 12px;
+  font-size: 15px;
+  font-style: thin;
+}*/
+
+/* 正反面 */
+.frontside,
+.backside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 隐藏3D的背面 */
+  backface-visibility: hidden;
+  border: 1px solid #d2dae2;
+  color: white;
+}
+
+/* 翻转卡片 */
+.backside {
+  transform: rotateY(180deg);
+}
+
+.pro-card-wrapper:hover .pro-card {
+  transform: rotateY(180deg);
+}
+
+.s2-pic1{
+  width: 300%;
+  height: 240%;
+  box-shadow: 0px 0px 5px 5px rgba(246,227,102, 0.5);
+}
+.s2-pic2{
+  width: 250%;
+  height: 346%;
+  box-shadow: 0px 0px 5px 5px rgba(225,101,46, 0.5);
+}
+.s2-pic3{
+  width: 250%;
+  height: 350%;
+  box-shadow: 0px 0px 5px 5px rgba(84,87,76, 0.5);
+}
+.s2-pic4{
+  width: 250%;
+  height: 346%;
+  box-shadow: 0px 0px 5px 5px rgba(240,212,186, 0.5);
+}
+.s2-pic5{
+  width: 250%;
+  height: 346%;
+  box-shadow: 0px 0px 5px 5px rgba(235,205,219, 0.5);
+}
+.s2-pic6{
+  width: 250%;
+  height: 346%;
+  box-shadow: 0px 0px 5px 5px rgba(86,128,66, 0.5);
+}
+
+
+/* 屏幕适配 */
+@media screen and (max-width: 960px) {
+  .pro-card {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .pro-card {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+  /* 屏幕小于650px特效会影响阅读，取消 */
+  .row {
+    filter: none;
+  }
+
+  .frontside,
+  .backside {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .pro-card {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+}

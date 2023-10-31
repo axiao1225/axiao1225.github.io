@@ -1,0 +1,109 @@
+/* 1. 样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+.prototype {
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 10px;
+    width: 320px;
+    height: 80px;
+}
+.prototype h2{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 100;
+  margin-bottom: 1%;
+  color: #000;
+}
+.prototype p{
+    position: relative;
+  　text-align: center;
+    padding-top: 3px;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+}
+.display{
+    width: 220px;
+    height: 480px;
+    margin: auto;
+    margin-bottom:1% ;
+    box-shadow: 0px 0px 5px 5px rgba(235,205,219, 1);
+}
+.big {
+    width: 220px;
+    height: 480px;
+}       
+.small {
+    width: 78px;
+    height: 168px;
+    opacity: 0.7;
+    box-shadow: 0px 0px 5px 5px rgba(235,205,219, 0.7);
+}
+.small:hover {
+    cursor: pointer;
+    opacity: 1.0;
+    box-shadow: 0px 0px 5px 5px rgba(235,205,219, 1);
+}
+/* 外层盒子样式,左右箭头和小圆点都要采用绝对定位，所以其父盒子要采用相对定位*/
+.s4-main {
+    position: relative;
+    overflow: hidden;
+    width: 1100px;
+    height: 200px;
+    margin: auto;
+/*    background: #000;*/
+}
+/*滚动区 包裹所有图片的盒子 宽度要足够宽可以放下所有的图片*/
+.protos {
+    position: absolute;
+    padding: 6px;
+    top: 0;
+    left: 0;
+    width: 3000px;
+}
+/* 对图片使用浮动 使其排列在一行*/
+.protos li{
+    float: left;
+}
+/* 图片大小会撑大盒子,设置图片大小 */
+.s4-main img {
+    width: 78px;
+    height: 168px;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+/*左右箭头相同样式*/
+.prev,
+.next {
+    display: none;
+    position: absolute;  
+    /* 绝对定位的盒子垂直居中 */
+    top: 50%;
+    margin-top: -15px;
+    width: 20px;
+    height: 30px;
+    background: rgba(235,205,219, 0.7);
+    text-align: center;
+    line-height: 28px;
+    color: #fff;
+    text-decoration: none; 
+}
+/*左箭头靠左定位*/
+.prev {
+    left: 0;
+     /* 设置圆角 */
+     border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+/*右箭头靠右定位*/
+.next {
+    right: 0;
+    /* 设置圆角 */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
